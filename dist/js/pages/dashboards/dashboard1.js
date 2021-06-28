@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
 
     // ==============================================================
     // Campaign
@@ -8,10 +8,11 @@ $(function () {
         bindto: '#campaign-v2',
         data: {
             columns: [
-                ['Direct Sales', 25],
-                ['Referral Sales', 15],
-                ['Afilliate Sales', 10],
-                ['Indirect Sales', 15]
+                ['Kitob', 36],
+                ['Jurnal', 14],
+                ['Gazeta', 10],
+                ['CD/DVD', 10],
+                ['Boshqalar', 10],
             ],
 
             type: 'donut',
@@ -23,7 +24,7 @@ $(function () {
             label: {
                 show: false
             },
-            title: 'Sales',
+            title: 'Umumiy fond',
             width: 18
         },
 
@@ -32,10 +33,11 @@ $(function () {
         },
         color: {
             pattern: [
-                '#edf2f6',
+                '#00c73f',
                 '#5f76e8',
                 '#ff4f70',
-                '#01caf1'
+                '#01caf1',
+                '#CF4647'
             ]
         }
     });
@@ -46,7 +48,7 @@ $(function () {
     // income
     // ============================================================== 
     var data = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        labels: ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun'],
         series: [
             [5, 4, 3, 7, 5, 10]
         ]
@@ -73,7 +75,7 @@ $(function () {
         ['screen and (max-width: 640px)', {
             seriesBarDistance: 5,
             axisX: {
-                labelInterpolationFnc: function (value) {
+                labelInterpolationFnc: function(value) {
                     return value[0];
                 }
             }
@@ -107,7 +109,7 @@ $(function () {
         selectedColor: '#bdc9d7',
         selectedRegions: [],
         showTooltip: true,
-        onRegionClick: function (element, code, region) {
+        onRegionClick: function(element, code, region) {
             var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
             alert(message);
         }
@@ -133,14 +135,14 @@ $(function () {
             onlyInteger: true,
             scaleMinSpace: 40,
             offset: 20,
-            labelInterpolationFnc: function (value) {
+            labelInterpolationFnc: function(value) {
                 return (value / 1) + 'k';
             }
         },
     });
 
     // Offset x1 a tiny amount so that the straight stroke gets a bounding box
-    chart.on('draw', function (ctx) {
+    chart.on('draw', function(ctx) {
         if (ctx.type === 'area') {
             ctx.element.attr({
                 x1: ctx.x1 + 0.001
@@ -149,7 +151,7 @@ $(function () {
     });
 
     // Create the gradient definition on created event (always after chart re-render)
-    chart.on('created', function (ctx) {
+    chart.on('created', function(ctx) {
         var defs = ctx.svg.elem('defs');
         defs.elem('linearGradient', {
             id: 'gradient',
@@ -166,7 +168,7 @@ $(function () {
         });
     });
 
-    $(window).on('resize', function () {
+    $(window).on('resize', function() {
         chart.update();
     });
 })
