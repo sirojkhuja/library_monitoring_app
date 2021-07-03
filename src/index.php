@@ -113,7 +113,7 @@
                         </a>
                         <ul class="navbar-nav">
                             <li class="nav-item border-left mt-1">
-                                <a class="nav-link py-0 d-flex align-items-center" href="docs/docs.html" target="_blank">
+                                <a class="nav-link py-0 d-flex align-items-center" href="index.html" target="_blank">
                                     <i data-feather="file-text" class="data-icon mr-2 ml-2 ml-md-0"></i>
                                     <span class="font-tofino-medium font-16">Documentation</span>
                                 </a>
